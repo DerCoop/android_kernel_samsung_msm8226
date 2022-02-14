@@ -80,7 +80,7 @@ u8 csc_update = 1;
 u8 csc_change = 0;
 #endif
 
-#if (defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
+#if (defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
 struct mutex esd_lock;
 #endif
 
@@ -785,7 +785,7 @@ static int mdss_fb_probe(struct platform_device *pdev)
 	INIT_LIST_HEAD(&mfd->proc_list);
 
 	mutex_init(&mfd->bl_lock);
-#if (defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
+#if (defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
 	mutex_init(&esd_lock);
 #endif
 	mutex_init(&mfd->power_state);
@@ -1305,7 +1305,7 @@ static int mdss_fb_blank(int blank_mode, struct fb_info *info)
 {
 	struct mdss_panel_data *pdata;
 	struct msm_fb_data_type *mfd = (struct msm_fb_data_type *)info->par;
-#if (defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
+#if (defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
 	static int nblank_mode = FB_BLANK_UNBLANK;
 	static int final_state = -1;
 	int ret;
@@ -1353,7 +1353,7 @@ NEXT_STEP2:
 		else
 			mfd->suspend.panel_power_on = false;
 
-#if (defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
+#if (defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
 		mutex_unlock(&esd_lock);
 #endif
 		return 0;
@@ -1370,7 +1370,7 @@ NEXT_STEP2:
 		pdata->panel_info.is_lpm_mode = false;
 	}
 
-#if (defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
+#if (defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)) && defined(CONFIG_ESD_ERR_FG_RECOVERY)
 	ret = mdss_fb_blank_sub(blank_mode, info, mfd->op_enable);
 	mutex_unlock(&esd_lock);
 	return ret;

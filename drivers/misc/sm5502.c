@@ -1030,7 +1030,7 @@ static int sm5502_attach_dev(struct sm5502_usbsw *usbsw)
 	struct sm5502_platform_data *pdata = usbsw->pdata;
 	struct i2c_client *client = usbsw->client;
 #if defined(CONFIG_USB_HOST_NOTIFY)
-#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 	struct regulator *otg_regulator = regulator_get(NULL, "8226_smbbp_otg");
 #endif
 #endif
@@ -1162,7 +1162,7 @@ static int sm5502_attach_dev(struct sm5502_usbsw *usbsw)
 #endif
 		sm5502_set_otg(usbsw, SM5502_ATTACHED);
 		pdata->callback(CABLE_TYPE_OTG, SM5502_ATTACHED);
-#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 		if (!regulator_is_enabled(otg_regulator)) {
 			regulator_enable(otg_regulator);
 		}
@@ -1281,7 +1281,7 @@ static int sm5502_detach_dev(struct sm5502_usbsw *usbsw)
 {
 	struct sm5502_platform_data *pdata = usbsw->pdata;
 #if defined(CONFIG_USB_HOST_NOTIFY)
-#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 	struct regulator *otg_regulator = regulator_get(NULL, "8226_smbbp_otg");
 #endif
 #endif
@@ -1356,7 +1356,7 @@ static int sm5502_detach_dev(struct sm5502_usbsw *usbsw)
 		sm5502_set_otg(usbsw, SM5502_DETACHED);
 		pdata->callback(CABLE_TYPE_OTG, SM5502_DETACHED);
 #endif
-#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_SEC_ATLANTIC_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 		if (regulator_is_enabled(otg_regulator)) {
 			regulator_disable(otg_regulator);
 		}
@@ -1659,7 +1659,7 @@ static int __devinit sm5502_probe(struct i2c_client *client,
 		pdata->dock_init = sm5502_dock_init;
 		pdata->oxp_callback = sm5502_oxp_callback;
 		pdata->mhl_sel = NULL;
-#if defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)
+#if defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)
 		gpio_tlmm_config(GPIO_CFG(pdata->gpio_int,  0, GPIO_CFG_INPUT,
 			GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
 #else
@@ -1670,7 +1670,7 @@ static int __devinit sm5502_probe(struct i2c_client *client,
 			GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
 		gpio_tlmm_config(GPIO_CFG(pdata->gpio_sda,  0, GPIO_CFG_INPUT,
 			GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#if defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN) || defined(CONFIG_MACH_ATLANTIC3GEUR_OPEN)
+#if defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN) || defined(CONFIG_MACH_ATLANTIC3GEUR_OPEN)
 		gpio_tlmm_config(GPIO_CFG(pdata->gpio_uart_on,  0, GPIO_CFG_INPUT,
 			GPIO_CFG_PULL_DOWN, GPIO_CFG_2MA), GPIO_CFG_DISABLE);
 #else

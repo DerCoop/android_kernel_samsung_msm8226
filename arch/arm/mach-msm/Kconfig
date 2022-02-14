@@ -852,12 +852,12 @@ config SEC_BERLUTI_PROJECT
          Common flag for all the Berluti Models and variants. Please use this flag for all
 	 the features common in all the Berluti Variants(3G,LTE,Wifi & Carrier).
 
-config SEC_S3VE_PROJECT
-	bool "S3VE Projects"
+config SEC_B8080F_PROJECT
+	bool "B8080F Projects"
         default n
         help
-         Common flag for all the S3VE Models and variants. Please use this flag for all
-	 the features common in all the S3VE Variants.
+         Common flag for all the B8080F Models and variants. Please use this flag for all
+	 the features common in all the B8080F Variants.
 
 config SEC_VICTOR3GDSDTV_PROJECT
 	bool "VICTOR3GDSDTV Projects"
@@ -1190,11 +1190,11 @@ config MACH_BERLUTILTE_COMMON
          MSM8926 MODEL BERLUTI LTE COMMON TAB Specific changes for differentiating
          it with the other models on the same MSM8x26 chipset.
 
-config MACH_S3VE3G_EUR
-	bool "S3VE3G EUR"
+config MACH_B8080F_EUR
+	bool "B8080F EUR"
         default n
         help
-         MSM8226 MODEL S3VE 3G EUR Specific changes for differentiating
+         MSM8226 MODEL B8080F 3G EUR Specific changes for differentiating
          it with the other models on the same MSM8x26 chipset.
 
 config SEC_MS01_PROJECT
@@ -3534,7 +3534,7 @@ endif # CPU_FREQ_MSM
 
 config MSM8228_USE_ACPU_FREQ_TBL_1P6
 	bool "Extra CPU Frequencies"
-	depends on SEC_ATLANTIC_PROJECT || SEC_S3VE_PROJECT
+	depends on SEC_ATLANTIC_PROJECT || SEC_B8080F_PROJECT
 	default n
 	help
 	  Force using acpu_freq_tbl_8226_1p6 to unlock extra CPU Frequencies

@@ -103,7 +103,7 @@ struct pm_gpio vib_pwm = {
 	#define GP_CLK_N_DEFAULT                        120
 	#define GP_CLK_D_DEFAULT			60  /* 50% duty cycle */
 	#define IMM_PWM_MULTIPLIER			120
-#elif defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#elif defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 	#define GP_CLK_M_DEFAULT			1
 	#define GP_CLK_N_DEFAULT			61
 	#define GP_CLK_D_DEFAULT			31  /* 50% duty cycle */

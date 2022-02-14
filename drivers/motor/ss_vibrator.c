@@ -84,7 +84,7 @@ int32_t vibe_set_pwm_freq(int intensity)
 	/* Put the MND counter in reset mode for programming */
 	HWIO_OUTM(GP1_CFG_RCGR, HWIO_GP_SRC_SEL_VAL_BMSK, 
 				0 << HWIO_GP_SRC_SEL_VAL_SHFT); //SRC_SEL = 000(cxo)
-#if defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 	HWIO_OUTM(GP1_CFG_RCGR, HWIO_GP_SRC_DIV_VAL_BMSK,
 				23 << HWIO_GP_SRC_DIV_VAL_SHFT); //SRC_DIV = 10111 (Div 12)
 #else
@@ -219,7 +219,7 @@ static void set_vibrator(struct ss_vib *vib)
 						GPIO_CFG_2MA), GPIO_CFG_ENABLE);
 			gpio_set_value(vibrator_drvdata.vib_pwm_gpio, \
 					VIBRATION_ON);
-#elif defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN) || defined(CONFIG_SEC_HESTIA_PROJECT)
+#elif defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN) || defined(CONFIG_SEC_HESTIA_PROJECT)
 			gpio_tlmm_config(GPIO_CFG(vibrator_drvdata.vib_pwm_gpio,\
 						3, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, \
 						GPIO_CFG_2MA), GPIO_CFG_ENABLE);
@@ -261,7 +261,7 @@ static void set_vibrator(struct ss_vib *vib)
 			if(vibrator_drvdata.pwm_dev != NULL) //Disable the PWM device.
 				pwm_disable(vibrator_drvdata.pwm_dev);
 		} else{	//AP PWM
-#if defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)
+#if defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)
 			gpio_tlmm_config(GPIO_CFG(vibrator_drvdata.vib_pwm_gpio,\
 						0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, \
 						GPIO_CFG_2MA),GPIO_CFG_ENABLE);
@@ -661,7 +661,7 @@ static void vibrator_initialize(void)
 			goto err2;
 		}
 	} else { //AP PWM
-#if defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_MACH_B8080F_EUR)
 		gpio_tlmm_config(GPIO_CFG(vibrator_drvdata.vib_pwm_gpio,
 					0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA),
 				GPIO_CFG_ENABLE);
@@ -819,7 +819,7 @@ static int ss_vibrator_probe(struct platform_device *pdev)
 
 #if defined(CONFIG_MACH_HLTEDCM) || defined(CONFIG_MACH_HLTEKDI) || defined(CONFIG_MACH_JS01LTEDCM)
 	virt_mmss_gp1_base = ioremap(MSM_MMSS_GP3_BASE,0x28);
-#elif defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_S3VE3G_EUR)
+#elif defined(CONFIG_SEC_BERLUTI_PROJECT) || defined(CONFIG_MACH_B8080F_EUR)
 	virt_mmss_gp1_base = ioremap(MSM_MMSS_GP0_BASE,0x28);
 #else
 	virt_mmss_gp1_base = ioremap(MSM_MMSS_GP1_BASE,0x28);

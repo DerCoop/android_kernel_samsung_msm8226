@@ -20,10 +20,10 @@
  
 /dts-v1/;
 /include/ "msm8226-v2.dtsi"
-/include/ "msm8226-sec-s3ve3geur-r04.dtsi"
+/include/ "msm8226-sec-b8080feur-r04.dtsi"
 
 / {
-	model = "[S3VE-3G-EUR-OPEN] Rev-04-MTP-v2";
+	model = "[B8080F-WIFI-EUR-OPEN] Rev-04-MTP-v2";
 	compatible = "qcom,msm8226-mtp", "qcom,msm8226", "qcom,mtp";
 	qcom,msm-id = <0x9e00ff01 4 0x20000>,
 			<0x9e08ff01 4 0x20000>,

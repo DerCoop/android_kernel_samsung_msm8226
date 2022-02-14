@@ -11,9 +11,9 @@
  */
 
 /include/ "dsi-panel-s6e8aa0a-720p-video.dtsi"
-/include/ "msm8226-camera-sensor-mtp-s3ve-r01.dtsi"
+/include/ "msm8226-camera-sensor-mtp-b8080f-r01.dtsi"
 /include/ "msm8226-sm5502.dtsi"
-/include/ "msm8226-sec-s3ve3geur-battery-data.dtsi"
+/include/ "msm8226-sec-b8080feur-battery-data.dtsi"
 /*/include/ "msm8226-s3ve-sensor-r01.dtsi"*/
 
 &soc {

@@ -358,7 +358,7 @@ static struct dsi_cmd_desc samsung_panel_elvss_update_cmds_4_8[] = {
 
 
 static struct dsi_cmd_desc samsung_panel_acl_on_cmds[] = {
-#if defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_MACH_B8080F_EUR)
 	{{DTYPE_DCS_LWRITE, 0, 0, 0, 0,
 		sizeof(acl_set_zero)}, acl_set_zero},
 #else
@@ -1311,7 +1311,7 @@ static void mdss_dsi_panel_acl_ctrl(struct mdss_panel_data *pdata, int enable)
 	ctrl_pdata = container_of(pdata, struct mdss_dsi_ctrl_pdata,
 				panel_data);
 
-#if !defined(CONFIG_MACH_S3VE3G_EUR)
+#if !defined(CONFIG_MACH_B8080F_EUR)
 	 flag = CMD_REQ_SINGLE_TX;
 #endif
 	switch (enable) {
@@ -1531,7 +1531,7 @@ static void mdss_dsi_panel_bl_ctrl(struct mdss_panel_data *pdata,
 #endif
 	}
 
-#if !defined(CONFIG_MACH_S3VE3G_EUR)
+#if !defined(CONFIG_MACH_B8080F_EUR)
 	if( msd.mfd->panel_power_on == false){
 		pr_err("%s: panel power off no bl ctrl\n", __func__);
 		return;
@@ -1615,7 +1615,7 @@ static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 
 	if (ctrl->on_cmds.cmd_cnt)
 		mdss_dsi_panel_cmds_send(ctrl, &ctrl->on_cmds);
-#if defined(CONFIG_MACH_S3VE3G_EUR)	
+#if defined(CONFIG_MACH_B8080F_EUR)
 	if(bl_first_update == 0){
 		bl_first_update = 1;
 		pr_err("to maintain default brightness\n");

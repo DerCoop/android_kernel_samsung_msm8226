@@ -129,7 +129,7 @@ static const struct qpnp_vadc_map_pt adcmap_btm_threshold[] = {
 	{590,	460},
 	{600,	447},
 };
-#elif defined(CONFIG_MACH_S3VE3G_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)
+#elif defined(CONFIG_MACH_B8080F_EUR) || defined(CONFIG_MACH_VICTOR3GDSDTV_LTN)
 static const struct qpnp_vadc_map_pt adcmap_btm_threshold[] = {
 	{-220,	1673},
 	{-200,	1658},

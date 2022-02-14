@@ -715,7 +715,7 @@ static void sec_jack_timer_handler(unsigned long data)
 static irqreturn_t sec_jack_detect_irq(int irq, void *dev_id)
 {
 
-#if defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_MACH_B8080F_EUR)
 		struct sec_jack_info *hi = dev_id;
 		disable_irq_wake(hi->det_irq);
 		queue_work(hi->queue, &hi->detect_work);

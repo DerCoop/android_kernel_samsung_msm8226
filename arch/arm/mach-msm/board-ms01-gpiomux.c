@@ -596,7 +596,7 @@ static struct msm_gpiomux_config msm_csensor_configs[] __initdata = {
 			[GPIOMUX_SUSPENDED] = &cam_settings[10],
 		},
 	},
-#if defined(CONFIG_MACH_S3VE3G_EUR)
+#if defined(CONFIG_MACH_B8080F_EUR)
 	{
 		.gpio = 27, /* CAM_MCLK1 */
 		.settings = {
